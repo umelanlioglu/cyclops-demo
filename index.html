@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclops AR Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        .content {
+            padding: 50px 40px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 0 0 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: #2a5298;
+        }
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        .tech-stack h2 {
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+        .tech-stack ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .tech-stack li {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+        .team {
+            background: #2a5298;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .team h2 {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 30px 20px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🔧 Cyclops HMD Pro G</h1>
+            <div class="subtitle">AI-Powered Industrial Maintenance Assistant</div>
+        </div>
+        
+        <div class="content">
+            <div class="video-container">
+                <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            
+            <h2 style="margin-bottom: 30px; color: #2a5298; font-size: 2em;">What We Built</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 Real-Time Object Detection</h3>
+                    <p>YOLOv8 segmentation identifies 3D printer components at 10 FPS with live bounding boxes</p>
+                </div>
+                <div class="feature">
+                    <h3>🤖 Voice-Activated AI</h3>
+                    <p>RAG-powered assistant answers technical questions using domain-specific knowledge base</p>
+                </div>
+                <div class="feature">
+                    <h3>📡 WebSocket Streaming</h3>
+                    <p>640×640 frame streaming to KUACC HPC cluster for GPU-accelerated inference</p>
+                </div>
+                <div class="feature">
+                    <h3>👓 Hands-Free Operation</h3>
+                    <p>Augmented reality overlay on Cyclops HMD Pro G keeps technicians' hands free</p>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <h2>Tech Stack</h2>
+                <ul>
+                    <li><strong>Frontend:</strong> Android (Kotlin + Jetpack Compose)</li>
+                    <li><strong>Computer Vision:</strong> YOLOv8 Segmentation</li>
+                    <li><strong>NLP:</strong> Faster-Whisper + RAG Pipeline</li>
+                    <li><strong>Backend:</strong> FastAPI + WebSocket</li>
+                    <li><strong>Infrastructure:</strong> KUACC HPC Cluster (GPU)</li>
+                    <li><strong>Hardware:</strong> Cyclops HMD Pro G (Android 11)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="team">
+            <h2>Team</h2>
+            <p style="font-size: 1.2em; margin-top: 10px;">
+                [Your Names Here]
+            </p>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                Senior Design Project • Spring 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
