@@ -359,44 +359,61 @@
           questions, retrieves task-specific knowledge, and returns grounded visual guidance.
         </p>
 
-        <div class="video-grid">
-          <div class="scenario-video-card">
-            <video controls playsinline preload="metadata">
-              <source src="assets/videos/scenario1_filament_time_bedleveling.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <div class="scenario-video-content">
-              <h3>Scenario 1 — Filament Loading, Miscellaneous Query, and Bed Leveling</h3>
-
-              <p>
-                This demo shows a single live printer video with three sequential user questions. The assistant
-                performs component segmentation, answers printer-service questions with RAG, handles a miscellaneous
-                time query without forcing printer guidance, and displays source references in the response overlay.
-              </p>
-
-              <div class="scenario-tag-row">
-                <span class="scenario-tag">YOLO Segmentation</span>
-                <span class="scenario-tag">RAG Answering</span>
-                <span class="scenario-tag">Page Reference</span>
-                <span class="scenario-tag">Miscellaneous Query Handling</span>
-              </div>
-            </div>
+    <div class="video-grid">
+      <div class="scenario-video-card">
+        <video controls playsinline preload="metadata">
+          <source src="assets/videos/scenario1_yolo_segmentation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <div class="scenario-video-content">
+          <h3>Scenario 1 — Real-Time Printer Component Segmentation</h3>
+    
+          <p>
+            This demo shows the computer vision module running YOLO26 Small instance segmentation on a live
+            Creality CR-10 Smart printer video. The system detects and segments visible printer components,
+            forming the visual grounding layer used by the assistant.
+          </p>
+    
+          <div class="scenario-tag-row">
+            <span class="scenario-tag">YOLO26 Segmentation</span>
+            <span class="scenario-tag">Printer Components</span>
+            <span class="scenario-tag">Visual Grounding</span>
           </div>
-
-          <div class="coming-soon-card">
-            <h3>Scenario 2 — Coming Soon</h3>
-            <p>
-              A second scenario video will be added here to demonstrate another service or troubleshooting task.
-            </p>
+        </div>
+      </div>
+    
+      <div class="scenario-video-card">
+        <video controls playsinline preload="metadata">
+          <source src="assets/videos/scenario1_filament_time_bedleveling.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <div class="scenario-video-content">
+          <h3>Scenario 2 — RAG-Based Service Assistance</h3>
+    
+          <p>
+            This demo shows a single live printer video with three sequential user questions. The assistant
+            answers printer-service questions with retrieval-augmented generation, handles a miscellaneous
+            time query without forcing printer guidance, and displays source references in the response overlay.
+          </p>
+    
+          <div class="scenario-tag-row">
+            <span class="scenario-tag">Scene-Aware RAG</span>
+            <span class="scenario-tag">Grounded Answering</span>
+            <span class="scenario-tag">Page Reference</span>
+            <span class="scenario-tag">Miscellaneous Query Handling</span>
           </div>
-
-          <div class="coming-soon-card">
-            <h3>Scenario 3 — Coming Soon</h3>
-            <p>
-              A third scenario video will be added here to show another installation, maintenance, or visual-guidance case.
-            </p>
-          </div>
+        </div>
+      </div>
+    
+      <div class="coming-soon-card">
+        <h3>Scenario 3 — Coming Soon</h3>
+        <p>
+          A third scenario video will be added here to show another installation, maintenance, or visual-guidance case.
+        </p>
+      </div>
+    </div>
 
           <!--
           After adding your second video, replace the Scenario 2 coming-soon card with this:
