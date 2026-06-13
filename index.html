@@ -169,24 +169,6 @@
       font-weight: 700;
     }
 
-    .coming-soon-card {
-      background: #f8fafc;
-      border: 1px dashed #93c5fd;
-      border-radius: 18px;
-      padding: 26px;
-    }
-
-    .coming-soon-card h3 {
-      color: #1e3a8a;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-    }
-
-    .coming-soon-card p {
-      color: #64748b;
-      font-size: 0.98rem;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -213,11 +195,21 @@
       font-size: 0.98rem;
     }
 
+    .metric-block {
+      margin-top: 28px;
+    }
+
+    .metric-block h3 {
+      color: #1e3a8a;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+    }
+
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
-      margin-top: 24px;
+      margin-top: 16px;
     }
 
     .metric {
@@ -238,7 +230,22 @@
     .metric .label {
       color: #475569;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .metric .detail {
+      color: #64748b;
+      font-size: 0.82rem;
+      margin-top: 6px;
+    }
+
+    .evaluation-note {
+      margin-top: 22px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      color: #475569;
     }
 
     .architecture {
@@ -359,111 +366,78 @@
           questions, retrieves task-specific knowledge, and returns grounded visual guidance.
         </p>
 
-    <div class="video-grid">
-      <div class="scenario-video-card">
-        <video controls playsinline preload="metadata">
-          <source src="assets/videos/scenario1_yolo_segmentation.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-    
-        <div class="scenario-video-content">
-          <h3>Scenario 1 — Real-Time Printer Component Segmentation</h3>
-    
-          <p>
-            This demo shows the computer vision module running YOLO26 Small instance segmentation on a live
-            Creality CR-10 Smart printer video. The system detects and segments visible printer components,
-            forming the visual grounding layer used by the assistant.
-          </p>
-    
-          <div class="scenario-tag-row">
-            <span class="scenario-tag">YOLO26 Segmentation</span>
-            <span class="scenario-tag">Printer Components</span>
-            <span class="scenario-tag">Visual Grounding</span>
-          </div>
-        </div>
-      </div>
-    
-      <div class="scenario-video-card">
-        <video controls playsinline preload="metadata">
-          <source src="assets/videos/scenario1_filament_time_bedleveling.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-    
-        <div class="scenario-video-content">
-          <h3>Scenario 2 — RAG-Based Service Assistance</h3>
-    
-          <p>
-            This demo shows a single live printer video with three sequential user questions. The assistant
-            answers printer-service questions with retrieval-augmented generation, handles a miscellaneous
-            time query without forcing printer guidance, and displays source references in the response overlay.
-          </p>
-    
-          <div class="scenario-tag-row">
-            <span class="scenario-tag">Scene-Aware RAG</span>
-            <span class="scenario-tag">Grounded Answering</span>
-            <span class="scenario-tag">Page Reference</span>
-            <span class="scenario-tag">Miscellaneous Query Handling</span>
-          </div>
-        </div>
-      </div>
-    
-      <div class="coming-soon-card">
-        <h3>Scenario 3 — Coming Soon</h3>
-        <p>
-          A third scenario video will be added here to show another installation, maintenance, or visual-guidance case.
-        </p>
-      </div>
-    </div>
-
-          <!--
-          After adding your second video, replace the Scenario 2 coming-soon card with this:
-
+        <div class="video-grid">
           <div class="scenario-video-card">
             <video controls playsinline preload="metadata">
-              <source src="assets/videos/scenario2_troubleshooting.mp4" type="video/mp4">
+              <source src="assets/videos/scenario1_yolo_segmentation.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
 
             <div class="scenario-video-content">
-              <h3>Scenario 2 — Troubleshooting Guidance</h3>
+              <h3>Scenario 1 — Real-Time Printer Component Segmentation</h3>
+
               <p>
-                This scenario demonstrates how the assistant responds to a troubleshooting question by retrieving
-                relevant maintenance knowledge and grounding the response in visible printer components.
+                This demo shows the computer vision module running YOLO26 Small instance segmentation on a live
+                Creality CR-10 Smart printer video. The system detects and segments visible printer components,
+                forming the visual grounding layer used by the assistant.
               </p>
 
               <div class="scenario-tag-row">
-                <span class="scenario-tag">Troubleshooting</span>
-                <span class="scenario-tag">Scene-Aware RAG</span>
+                <span class="scenario-tag">YOLO26 Segmentation</span>
+                <span class="scenario-tag">Printer Components</span>
                 <span class="scenario-tag">Visual Grounding</span>
               </div>
             </div>
           </div>
-          -->
-
-          <!--
-          After adding your third video, replace the Scenario 3 coming-soon card with this:
 
           <div class="scenario-video-card">
             <video controls playsinline preload="metadata">
-              <source src="assets/videos/scenario3_installation_guidance.mp4" type="video/mp4">
+              <source src="assets/videos/scenario1_filament_time_bedleveling.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
 
             <div class="scenario-video-content">
-              <h3>Scenario 3 — Installation / Setup Guidance</h3>
+              <h3>Scenario 2 — RAG-Based Service Assistance</h3>
+
               <p>
-                This scenario highlights the assistant's ability to guide a technician through a setup-related task
-                using retrieved manual knowledge, detected printer parts, and a grounded answer overlay.
+                This demo shows a single live printer video with three sequential user questions. The assistant
+                answers printer-service questions with retrieval-augmented generation, handles a miscellaneous
+                time query without forcing printer guidance, and displays source references in the response overlay.
               </p>
 
               <div class="scenario-tag-row">
-                <span class="scenario-tag">Installation Support</span>
-                <span class="scenario-tag">Manual-Grounded Answer</span>
-                <span class="scenario-tag">Component Detection</span>
+                <span class="scenario-tag">Scene-Aware RAG</span>
+                <span class="scenario-tag">Grounded Answering</span>
+                <span class="scenario-tag">Page Reference</span>
+                <span class="scenario-tag">Miscellaneous Query Handling</span>
               </div>
             </div>
           </div>
-          -->
+
+          <div class="scenario-video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/scenario3_preheat_belt_wifi.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="scenario-video-content">
+              <h3>Scenario 3 — Preheating, Belt Adjustment, and Wi-Fi Guidance</h3>
+
+              <p>
+                This demo tests three additional manual-grounded service tasks on a different printer video:
+                PLA preheating settings, Y-axis belt/platform adjustment, and Wi-Fi setup using the QR code.
+                The assistant retrieves the relevant manual section, grounds the answer in visible printer parts,
+                and displays page references in the response overlay.
+              </p>
+
+              <div class="scenario-tag-row">
+                <span class="scenario-tag">Preheating</span>
+                <span class="scenario-tag">Belt Adjustment</span>
+                <span class="scenario-tag">Wi-Fi Setup</span>
+                <span class="scenario-tag">Manual Reference</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -525,30 +499,78 @@
         <h2>Evaluation Highlights</h2>
 
         <p>
-          The final system was evaluated using Demo Day visual data and representative printer-related
-          test queries.
+          The final system was evaluated using Demo Day visual data and 20 representative printer-related
+          test queries. The results measure both the visual grounding layer and the manual-grounded language
+          pipeline.
         </p>
 
-        <div class="metric-grid">
-          <div class="metric">
-            <div class="value">84.4%</div>
-            <div class="label">YOLO mAP@50</div>
-          </div>
+        <div class="metric-block">
+          <h3>Computer Vision Module</h3>
 
-          <div class="metric">
-            <div class="value">89.8%</div>
-            <div class="label">Segmentation Recall</div>
-          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="value">84.4%</div>
+              <div class="label">YOLO mAP@50</div>
+              <div class="detail">Mask overlap quality</div>
+            </div>
 
-          <div class="metric">
-            <div class="value">95%</div>
-            <div class="label">RAG Retrieval@3</div>
-          </div>
+            <div class="metric">
+              <div class="value">83.9%</div>
+              <div class="label">Precision</div>
+              <div class="detail">False-highlight control</div>
+            </div>
 
-          <div class="metric">
-            <div class="value">85%</div>
-            <div class="label">Factual Correctness</div>
+            <div class="metric">
+              <div class="value">89.8%</div>
+              <div class="label">Recall</div>
+              <div class="detail">Visible part detection</div>
+            </div>
+
+            <div class="metric">
+              <div class="value">85.7%</div>
+              <div class="label">F1 Score</div>
+              <div class="detail">Balanced detection quality</div>
+            </div>
           </div>
+        </div>
+
+        <div class="metric-block">
+          <h3>RAG-Based Reasoning Module</h3>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="value">95%</div>
+              <div class="label">Retrieval@3</div>
+              <div class="detail">19 / 20 queries</div>
+            </div>
+
+            <div class="metric">
+              <div class="value">70%</div>
+              <div class="label">Grounded Answer Rate</div>
+              <div class="detail">14 / 20 queries</div>
+            </div>
+
+            <div class="metric">
+              <div class="value">85%</div>
+              <div class="label">Factual Correctness</div>
+              <div class="detail">17 / 20 queries</div>
+            </div>
+
+            <div class="metric">
+              <div class="value">85%</div>
+              <div class="label">Scene-Reference Correctness</div>
+              <div class="detail">17 / 20 queries</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="evaluation-note">
+          <p>
+            The RAG evaluation tested retrieval performance, groundedness, factual correctness, and
+            whether the generated answer referred to components that were visible or relevant in the
+            technician's field of view. The system retrieved a relevant source in the top three chunks for
+            19 of 20 queries and produced factually correct answers for 17 of 20 queries.
+          </p>
         </div>
       </section>
 
