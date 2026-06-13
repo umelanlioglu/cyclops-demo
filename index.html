@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyclops Field Assistant</title>
+
   <style>
     * {
       margin: 0;
@@ -115,40 +117,74 @@
       font-size: 1.05rem;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      margin: 28px 0 10px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.25);
-      background: #111827;
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin: 32px 0 10px;
     }
 
-    .video-placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: #cbd5e1;
-      text-align: center;
+    .scenario-video-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.14);
+    }
+
+    .scenario-video-card video {
+      width: 100%;
+      display: block;
+      background: #020617;
+    }
+
+    .scenario-video-content {
       padding: 24px;
     }
 
-    .video-placeholder strong {
-      color: white;
-      font-size: 1.25rem;
-      display: block;
-      margin-bottom: 8px;
+    .scenario-video-content h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
     }
 
-    .video-container iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .scenario-video-content p {
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .scenario-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .scenario-tag {
+      background: #dbeafe;
+      color: #1e40af;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .coming-soon-card {
+      background: #f8fafc;
+      border: 1px dashed #93c5fd;
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .coming-soon-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .coming-soon-card p {
+      color: #64748b;
+      font-size: 0.98rem;
     }
 
     .grid {
@@ -289,11 +325,14 @@
     }
   </style>
 </head>
+
 <body>
   <main class="container">
     <section class="hero">
       <div class="badge">Koç University ELEC 491 Senior Design Project</div>
+
       <h1>Cyclops Field Assistant</h1>
+
       <p class="subtitle">
         An AI-powered wearable service assistant that combines real-time printer-component segmentation,
         speech transcription, retrieval-augmented generation, and scene-aware visual guidance.
@@ -303,6 +342,7 @@
         <a class="btn btn-primary" href="https://github.com/umelanlioglu/cyclops_field_assistant" target="_blank">
           View Source Code
         </a>
+
         <a class="btn btn-secondary" href="#demo">
           View Demo
         </a>
@@ -312,26 +352,107 @@
     <section class="content">
       <section class="section" id="demo">
         <h2>Project Demo</h2>
+
         <p>
           The system was demonstrated on a Creality CR-10 Smart 3D printer as a representative industrial
           service target. The assistant detects visible printer components, understands spoken technician
           questions, retrieves task-specific knowledge, and returns grounded visual guidance.
         </p>
 
-        <div class="video-container">
-          <!-- Replace YOUR_VIDEO_ID with your final YouTube video ID, or replace this block with a Google Drive link/button. -->
-          <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe> -->
-          <div class="video-placeholder">
-            <div>
-              <strong>Demo video placeholder</strong>
-              Replace this section with the final YouTube embed or Google Drive video link.
+        <div class="video-grid">
+          <div class="scenario-video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/scenario1_filament_time_bedleveling.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="scenario-video-content">
+              <h3>Scenario 1 — Filament Loading, Miscellaneous Query, and Bed Leveling</h3>
+
+              <p>
+                This demo shows a single live printer video with three sequential user questions. The assistant
+                performs component segmentation, answers printer-service questions with RAG, handles a miscellaneous
+                time query without forcing printer guidance, and displays source references in the response overlay.
+              </p>
+
+              <div class="scenario-tag-row">
+                <span class="scenario-tag">YOLO Segmentation</span>
+                <span class="scenario-tag">RAG Answering</span>
+                <span class="scenario-tag">Page Reference</span>
+                <span class="scenario-tag">Miscellaneous Query Handling</span>
+              </div>
             </div>
           </div>
+
+          <div class="coming-soon-card">
+            <h3>Scenario 2 — Coming Soon</h3>
+            <p>
+              A second scenario video will be added here to demonstrate another service or troubleshooting task.
+            </p>
+          </div>
+
+          <div class="coming-soon-card">
+            <h3>Scenario 3 — Coming Soon</h3>
+            <p>
+              A third scenario video will be added here to show another installation, maintenance, or visual-guidance case.
+            </p>
+          </div>
+
+          <!--
+          After adding your second video, replace the Scenario 2 coming-soon card with this:
+
+          <div class="scenario-video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/scenario2_troubleshooting.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="scenario-video-content">
+              <h3>Scenario 2 — Troubleshooting Guidance</h3>
+              <p>
+                This scenario demonstrates how the assistant responds to a troubleshooting question by retrieving
+                relevant maintenance knowledge and grounding the response in visible printer components.
+              </p>
+
+              <div class="scenario-tag-row">
+                <span class="scenario-tag">Troubleshooting</span>
+                <span class="scenario-tag">Scene-Aware RAG</span>
+                <span class="scenario-tag">Visual Grounding</span>
+              </div>
+            </div>
+          </div>
+          -->
+
+          <!--
+          After adding your third video, replace the Scenario 3 coming-soon card with this:
+
+          <div class="scenario-video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/videos/scenario3_installation_guidance.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="scenario-video-content">
+              <h3>Scenario 3 — Installation / Setup Guidance</h3>
+              <p>
+                This scenario highlights the assistant's ability to guide a technician through a setup-related task
+                using retrieved manual knowledge, detected printer parts, and a grounded answer overlay.
+              </p>
+
+              <div class="scenario-tag-row">
+                <span class="scenario-tag">Installation Support</span>
+                <span class="scenario-tag">Manual-Grounded Answer</span>
+                <span class="scenario-tag">Component Detection</span>
+              </div>
+            </div>
+          </div>
+          -->
         </div>
       </section>
 
       <section class="section">
         <h2>What We Built</h2>
+
         <div class="grid">
           <div class="card">
             <h3>Real-Time Segmentation</h3>
@@ -385,6 +506,7 @@
 
       <section class="section">
         <h2>Evaluation Highlights</h2>
+
         <p>
           The final system was evaluated using Demo Day visual data and representative printer-related
           test queries.
@@ -395,14 +517,17 @@
             <div class="value">84.4%</div>
             <div class="label">YOLO mAP@50</div>
           </div>
+
           <div class="metric">
             <div class="value">89.8%</div>
             <div class="label">Segmentation Recall</div>
           </div>
+
           <div class="metric">
             <div class="value">95%</div>
             <div class="label">RAG Retrieval@3</div>
           </div>
+
           <div class="metric">
             <div class="value">85%</div>
             <div class="label">Factual Correctness</div>
@@ -412,6 +537,7 @@
 
       <section class="section">
         <h2>System Architecture</h2>
+
         <p>
           The headset acts as a thin client while computationally heavy AI inference is offloaded to a
           KUACC GPU node.
@@ -437,6 +563,7 @@ Visual guidance and spoken feedback on the headset</code>
       <section class="section">
         <div class="tech-stack">
           <h2>Tech Stack</h2>
+
           <ul>
             <li><strong>Wearable Client:</strong> Android, Kotlin, Jetpack Compose</li>
             <li><strong>Computer Vision:</strong> YOLO26 Small Segmentation</li>
@@ -453,12 +580,15 @@ Visual guidance and spoken feedback on the headset</code>
 
     <section class="team">
       <h2>Team</h2>
+
       <p style="font-size: 1.2rem;">
         Ahmet Karataş · İlkin Umut Melanlıoğlu
       </p>
+
       <p>
         Project Advisor: Prof. Hakan Ürey
       </p>
+
       <p>
         Koç University College of Engineering · ELEC 491 · 2026
       </p>
@@ -467,6 +597,7 @@ Visual guidance and spoken feedback on the headset</code>
         <a class="btn btn-primary" href="https://github.com/umelanlioglu/cyclops_field_assistant" target="_blank">
           Source Code
         </a>
+
         <a class="btn btn-secondary" href="#demo">
           Demo Video
         </a>
@@ -475,3 +606,4 @@ Visual guidance and spoken feedback on the headset</code>
   </main>
 </body>
 </html>
+```
